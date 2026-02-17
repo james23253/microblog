@@ -1,0 +1,118 @@
+2024-03-20 16:51:29,709 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-20 16:51:33,635 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-20 17:04:43,643 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-20 17:04:46,716 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-20 17:08:26,774 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-20 17:08:29,593 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-20 17:14:38,208 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-20 17:14:41,079 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-21 13:08:25,218 INFO: Microblog startup [in C:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-21 13:37:39,578 INFO: Microblog startup [in C:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-21 13:38:04,031 INFO: Microblog startup [in C:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-21 14:08:12,325 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:86]
+2024-03-21 14:08:16,895 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:86]
+2024-03-21 14:09:47,277 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:86]
+2024-03-21 14:09:50,002 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:86]
+2024-03-21 14:15:25,797 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:86]
+2024-03-21 14:15:28,555 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:86]
+2024-03-21 15:32:56,892 INFO: Microblog startup [in C:\Users\james\OneDrive\Desktop\project1\app\__init__.py:89]
+2024-03-21 15:33:38,790 INFO: Microblog startup [in C:\Users\james\OneDrive\Desktop\project1\app\__init__.py:89]
+2024-03-21 15:45:15,388 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:89]
+2024-03-21 15:45:18,964 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:89]
+2024-03-21 15:55:37,608 INFO: Microblog startup [in C:\Users\james\OneDrive\Desktop\project1\app\__init__.py:89]
+2024-03-21 15:55:40,198 INFO: Microblog startup [in C:\Users\james\OneDrive\Desktop\project1\app\__init__.py:89]
+2024-03-21 16:24:25,062 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:89]
+2024-03-21 16:26:43,227 ERROR: Exception on /auth/reset_password_request [POST] [in C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\auth\routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "c:\Users\james\OneDrive\Desktop\project1\app\auth\email.py", line 13, in send_password_reset_email
+    html_body=render_template('email/reset_password.html',
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\james\OneDrive\Desktop\project1\app\templates\email\reset_password.html", line 2, in top-level template code
+    {% import "bootstrap_wtf.html" as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\templates\base.html", line 88, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\templates\email\reset_password.html", line 6, in block 'content'
+    {{ wtf.quick_form(form) }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\runtime.py", line 777, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\templates\bootstrap_wtf.html", line 53, in template
+    {{ form.hidden_tag() }}
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2024-03-21 16:27:05,896 ERROR: Exception on /auth/reset_password_request [POST] [in C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\auth\routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "c:\Users\james\OneDrive\Desktop\project1\app\auth\email.py", line 13, in send_password_reset_email
+    html_body=render_template('email/reset_password.html',
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\james\OneDrive\Desktop\project1\app\templates\email\reset_password.html", line 2, in top-level template code
+    {% import "bootstrap_wtf.html" as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\templates\base.html", line 88, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\templates\email\reset_password.html", line 6, in block 'content'
+    {{ wtf.quick_form(form) }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\runtime.py", line 777, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\templates\bootstrap_wtf.html", line 53, in template
+    {{ form.hidden_tag() }}
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined

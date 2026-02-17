@@ -1,0 +1,117 @@
+2024-03-21 20:06:36,590 ERROR: Exception on /export_posts [GET] [in c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\app\main\routes.py", line 225, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "C:\Users\james\OneDrive\Desktop\project1\app\models.py", line 210, in launch_task
+    rq_job = current_app.task_queue.enqueue(f'app.tasks.{name}', self.id,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\rq\queue.py", line 977, in enqueue
+    return self.enqueue_call(
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\rq\queue.py", line 725, in enqueue_call
+    return self.enqueue_job(job, pipeline=pipeline, at_front=at_front)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\rq\queue.py", line 1100, in enqueue_job
+    return self._enqueue_job(job, pipeline=pipeline, at_front=at_front)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\rq\queue.py", line 1120, in _enqueue_job
+    job.redis_server_version = self.get_redis_server_version()
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\rq\queue.py", line 219, in get_redis_server_version
+    self.redis_server_version = get_version(self.connection)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\rq\utils.py", line 293, in get_version
+    tuple(int(i) for i in str(connection.info("server")["redis_version"]).split('.')[:3]),
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\redis\commands\core.py", line 1005, in info
+    return self.execute_command("INFO", section, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\redis\client.py", line 540, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\redis\connection.py", line 1104, in get_connection
+    connection.connect()
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2024-03-21 20:09:11,356 ERROR: Exception on /auth/reset_password_request [POST] [in c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\app\auth\routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "C:\Users\james\OneDrive\Desktop\project1\app\auth\email.py", line 13, in send_password_reset_email
+    html_body=render_template('email/reset_password.html',
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\james\OneDrive\Desktop\project1\app\templates\email\reset_password.html", line 2, in top-level template code
+    {% import "bootstrap_wtf.html" as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\app\templates\base.html", line 88, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\app\templates\email\reset_password.html", line 6, in block 'content'
+    {{ wtf.quick_form(form) }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\runtime.py", line 777, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\app\templates\bootstrap_wtf.html", line 53, in template
+    {{ form.hidden_tag() }}
+  File "c:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\jinja2\environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2024-03-25 13:19:35,876 INFO: Microblog startup [in C:\Users\james\OneDrive\Desktop\project1\app\__init__.py:89]

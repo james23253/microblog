@@ -1,0 +1,130 @@
+2024-03-20 10:41:25,950 ERROR: Exception on /auth/login [POST] [in C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1970, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.last_message_read_time
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\auth\routes.py", line 20, in login
+    user = db.session.scalar(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1843, in scalar
+    return self._proxied.scalar(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2354, in scalar
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1849, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1989, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2356, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1970, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.last_message_read_time
+[SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen, user.last_message_read_time 
+FROM user 
+WHERE user.username = ?]
+[parameters: ('sam',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-03-20 11:16:11,377 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
+2024-03-20 11:16:45,433 ERROR: Exception on /auth/login [POST] [in C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1970, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.last_message_read_time
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\james\OneDrive\Desktop\project1\app\auth\routes.py", line 20, in login
+    user = db.session.scalar(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1843, in scalar
+    return self._proxied.scalar(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2354, in scalar
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1849, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1989, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2356, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1970, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\james\OneDrive\Desktop\project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.last_message_read_time
+[SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen, user.last_message_read_time 
+FROM user 
+WHERE user.username = ?]
+[parameters: ('sam',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-03-20 11:23:38,067 INFO: Microblog startup [in c:\Users\james\OneDrive\Desktop\project1\app\__init__.py:83]
