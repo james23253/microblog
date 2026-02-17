@@ -15,7 +15,7 @@ File: `vercel.json`
 
 - Updated to `version: 3`
 - Added function runtime pin:
-  - `api/wsgi.py` -> `python3.10`
+  - `api/wsgi.py` -> `python3.12`
 
 This avoids runtime drift and improves package compatibility.
 
