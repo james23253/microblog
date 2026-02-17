@@ -7,9 +7,15 @@ load_dotenv(os.path.join(basedir, '.env'))
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', '').replace(
-        'postgres://', 'postgresql://') or \
-        'sqlite:///' + os.path.join(basedir, 'app.db')
+    _database_url = os.environ.get('DATABASE_URL', '').replace(
+        'postgres://', 'postgresql://')
+    if _database_url:
+        SQLALCHEMY_DATABASE_URI = _database_url
+    elif os.environ.get('VERCEL'):
+        # Vercel filesystem is read-only except /tmp.
+        SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/app.db'
+    else:
+        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)

@@ -15,7 +15,6 @@ flask-babel==4.0.0
 Flask-Bootstrap==3.3.7.1
 Flask-Login==0.6.3
 Flask-HTTPAuth==4.7.0
-flask_httpauth
 Flask-Mail==0.9.1
 Flask-Migrate==4.0.5
 Flask-Moment==1.0.5
