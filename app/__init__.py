@@ -105,6 +105,12 @@ def create_app(config_class=Config):
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog startup')
 
+    # Vercel + SQLite fallback: ensure schema exists in ephemeral /tmp DB.
+    if os.environ.get('VERCEL') and app.config['SQLALCHEMY_DATABASE_URI'].startswith('sqlite:'):
+        with app.app_context():
+            db.create_all()
+        app.logger.info('SQLite schema ensured with create_all() on startup')
+
     return app
 
 
