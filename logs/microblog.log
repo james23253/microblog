@@ -96,3 +96,5 @@ jinja2.exceptions.UndefinedError: 'form' is undefined
 2026-02-18 13:39:09,688 INFO: Microblog startup [in C:\Users\Administrator\OneDrive\Documents\GitHub\microblog\app\__init__.py:106]
 2026-02-18 13:39:18,475 INFO: Microblog startup [in C:\Users\Administrator\OneDrive\Documents\GitHub\microblog\app\__init__.py:106]
 2026-02-18 13:42:23,897 INFO: Microblog startup [in C:\Users\Administrator\OneDrive\Documents\GitHub\microblog\app\__init__.py:106]
+2026-02-18 14:11:02,913 INFO: Microblog startup [in C:\Users\Administrator\OneDrive\Documents\GitHub\microblog\app\__init__.py:106]
+2026-02-18 14:11:04,110 INFO: Microblog startup [in C:\Users\Administrator\OneDrive\Documents\GitHub\microblog\app\__init__.py:106]
