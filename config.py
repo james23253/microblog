@@ -7,7 +7,7 @@ load_dotenv(os.path.join(basedir, '.env'))
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
-    _database_url = os.environ.get('DATABASE_URL', '').replace(
+    _database_url = os.environ.get('DATABASE_POSTGRES_URL', '').replace(
         'postgres://', 'postgresql://')
     if _database_url:
         SQLALCHEMY_DATABASE_URI = _database_url
@@ -28,3 +28,8 @@ class Config:
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
     REDIS_URL = os.environ.get('REDIS_URL') or 'redis://'
     POSTS_PER_PAGE = 25
+
+
+
+
+   
